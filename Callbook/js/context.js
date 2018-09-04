@@ -72,7 +72,7 @@ class Context {
     let thisUrl = this.userUrl
     const btn = document.querySelector("button");
     const add = document.querySelector(".add");
-    const url = `http://easycode-js.herokuapp.com/${this.userUrl}`
+    const url = `https://easycode-js.herokuapp.com/${this.userUrl}`
     // console.log("Server request " + url);
     let dataBaze;
     let usersWithFullName = []
@@ -131,7 +131,7 @@ class Context {
         this.editContact.editContactPageOutput(user)
 
 
-        const url = `http://easycode-js.herokuapp.com/${this.userUrl}`
+        const url = `https://easycode-js.herokuapp.com/${this.userUrl}`
         const deleteUser = (user_id) => {
           // console.log("deleteUser request " + url)
           return fetch(url + '/users/' + user_id, {
@@ -277,7 +277,7 @@ class Context {
 
     document.querySelectorAll(".td_header").forEach((value)=>{
       value.addEventListener("click", (e)=>{
-        // console.log(value.innerHTML);
+        
         this.sortUsers(value.innerHTML)
       })
     })

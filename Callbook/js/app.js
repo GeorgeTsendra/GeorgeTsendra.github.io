@@ -1,4 +1,4 @@
-class App {
+﻿class App {
   constructor() {
     this.footer = new Footer()
     this.addUser = new AddUser()
@@ -44,7 +44,7 @@ class App {
     let phone = document.querySelectorAll('.edit-info > .edit-field > input')[0]
     let email = document.querySelectorAll('.edit-info > .edit-field > input')[2]
 
-    const url = `http://easycode-js.herokuapp.com/${this.userUrl}`
+    const url = `https://easycode-js.herokuapp.com/${this.userUrl}`
     // console.log("contentEddtUser request " + url);
     const serverAddUser = () => {
 
