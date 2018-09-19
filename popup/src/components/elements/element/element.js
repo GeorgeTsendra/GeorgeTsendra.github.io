@@ -18,7 +18,9 @@ import  ReactDOM from "react-dom";
                <option>Quadro</option>
             </select>
             <input type="number" name="" value={number}/>
-            <button type="button" className="delete" name="delete" onClick={()=>{initOfremoveTheElement(id)}}> + </button>
+            <button type="button" className="delete" name="delete" onClick={()=>{initOfremoveTheElement(id)}}>
+            +
+            </button>
 
           </React.Fragment>
         );

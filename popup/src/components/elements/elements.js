@@ -8,47 +8,30 @@ class Elements extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        listData: [],
+
       };
     }
 
-    removeTheElement = (idToRemove) => {
-
-      console.log(this.state.listData , "before removing");
-
-      let newArr = this.state.listData;
-      newArr.forEach((value,index,arr)=>{
-
-        if (value.id == idToRemove) {
-         newArr.splice(index, 1)
-        }
-    })
-
-    this.setState({
-      listData: newArr
-    })
-    // this.render()
-    console.log("removing done");
-  }
-
-
-
-  componentDidMount(){
-    this.setState({
-      listData : this.props.listData,
-    })
-    console.log(this.state.listData , "state componentDidMount");
-  }
 
 
     render() {
-
-        const {
+      const {
           listData,
         } = this.props;
-        console.log(this.state.listData , "state in render");
 
-        // console.log(this.props.listData);
+
+        let removeTheElement = (idToRemove) => {
+          let newArr = this.props.listData;
+          newArr.forEach((value,index,arr)=>{
+
+            if (value.id == idToRemove) {
+              newArr.splice(index, 1)
+            }
+          })
+        }
+
+
+      // console.log(this.props.listData , "state in props elements");
 
       let dataToMap = listData.map((value,index,arr) => {
         return (

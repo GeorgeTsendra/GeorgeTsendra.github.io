@@ -16,41 +16,45 @@ import ListData from "./list-data/list-data";
           listData: ListData,
 
         };
+
     }
 
-    valueOnChange = (event)=>{
+    valueOnChange = (event) => {
       this.setState({
         value: event.target.value
       })
-      // console.log(this.state.value);
     }
-
-
-
 
     showAddInput = ()=> {
       this.setState({
         showAddInput: !this.state.showAddInput,
       })
-      // console.log(this.state.showAddInput);
     }
 
 
-    addNewElement = (event) => {
-      ListData.push({
+    addNewElement = () => {
+      let newListData = ListData;
+      console.log(newListData);
+
+
+      newListData.push({
         id: Math.random()*100000000000000000,
         number: this.state.value,
       })
+      this.setState({
+        listData: newListData,
+      })
+      console.log(this.state.listData , "list data was added");
     }
 
 
+    // cancelWithoutSave = ()=>{
+    //
+    //     console.log(this.state.listData , "list data was not saved");
+    //   }
 
 
     render() {
-
-      // console.log( this.state.listData);
-
-
 
       const {
         changePopupShowOrHide
@@ -61,6 +65,18 @@ import ListData from "./list-data/list-data";
         this.addNewElement()
         changePopupShowOrHide()
       }
+
+
+
+      let cancalAndCose = () => {
+
+          this.cancelWithoutSave()
+          changePopupShowOrHide()
+      }
+
+
+      // let listDataAndStoreList = this.state.listData.concat(this.state.storeList);
+
 
 
         if (this.state.showAddInput) {
@@ -86,7 +102,7 @@ import ListData from "./list-data/list-data";
               </main>
               <footer>
                 <button type="button" name="button" onClick={saveAndCose}>SAVE</button>
-                <button type="button" name="button" onClick={changePopupShowOrHide}>CANCEL</button>
+                <button type="button" name="button" onClick={cancalAndCose}>CANCEL</button>
 
               </footer>
             </div>
@@ -116,7 +132,7 @@ import ListData from "./list-data/list-data";
             </main>
             <footer>
               <button type="button" name="button" onClick={changePopupShowOrHide}>SAVE</button>
-              <button type="button" name="button" onClick={changePopupShowOrHide}>CANCEL</button>
+              <button type="button" name="button" onClick={cancalAndCose}>CANCEL</button>
 
             </footer>
           </div>
